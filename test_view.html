@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="./res/bootstrap.min.css">
+        <script type="text/javascript" src="scripts/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="scripts/api/api.js"></script>
+        <script type="text/javascript" src="scripts/test_viewController.js"></script>
+    </head>
+    
+    <body>
+        <div class="jumbotron">
+            <h1>BookWorm Trivia</h1>
+        </div>
+        
+        <div class="container">
+            <button class="btn btn-primary" onclick="getQuestionClick();">Get Questions</button>
+        </div>
+        <br/>
+        <div class="container">
+            <h2 id="question">Question</h2>
+            <br/>
+            <div class="container">
+                <button class="btn btn-primary">A</button><span id="a"> Answer A</span>
+            </div>
+            <br/>
+            <div class="container">
+                <button class="btn btn-primary">B</button><span id="b"> Answer B</span>
+            </div>
+            <br/>
+            <div class="container">
+                <button class="btn btn-primary">C</button><span id="c"> Answer C</span>
+            </div>
+            <br/>
+            <div class="container">
+                <button class="btn btn-primary">D</button><span id="d"> Answer D</span>
+            </div>
+            <br/>
+        </div>
+        
+        </div>
+    </body>
+</html>
