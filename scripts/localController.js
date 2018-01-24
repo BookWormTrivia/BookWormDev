@@ -1,10 +1,24 @@
+var numPlayers = 2;
+
+function addPlayer() {
+	numPlayers++;
+	document.getElementById("add-player-div").innerHTML += `
+    	<input id="player-` + numPlayers + `-input" style="height:30px; width:280px; font-size:16px; padding:5px; border:2px solid #0C60FE" placeholder="Player ` + numPlayers + `">
+		<br>
+		<br>`;
+}
+
+function removePlayer(num) {
+	
+}
+
 function clickContinue() {
     "use strict";
     var playerOne = "Player 1";
     var playerTwo = "Player 2";
     
-    var playerOneInput = document.getElementById("player-one-input").value;
-    var playerTwoInput = document.getElementById("player-two-input").value;
+    var playerOneInput = document.getElementById("player-1-input").value;
+    var playerTwoInput = document.getElementById("player-2-input").value;
     
     if (playerOneInput != "") {
         playerOne = playerOneInput;

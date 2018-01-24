@@ -13,13 +13,20 @@
         
         <div id="set-online" style="text-align: center;" class="container">
             <p class="h2" style="margin-bottom:20px;">Enter Player Names:</p>
-            <input id="player-one-input" style="height:30px; width:280px; font-size:16px; padding:5px; border:2px solid #0C60FE" placeholder="Player 1">
+            <input id="player-1-input" style="height:30px; width:280px; font-size:16px; padding:5px; border:2px solid #0C60FE" placeholder="Player 1">
+			<button style="width:30px; color:red; padding-bottom:1px;">X</button> 
             <br>
             <br>
-            <input id="player-two-input" style="height:30px; width:280px; font-size:16px; padding:5px; border:2px solid #0C60FE" placeholder="Player 2">
-            <br>
+            <input id="player-2-input" style="height:30px; width:280px; font-size:16px; padding:5px; border:2px solid #0C60FE" placeholder="Player 2">
+			<button style="width:30px; color:red; padding-bottom:1px;">X</button>
+			<br>
+			<br>
+            <div id="add-player-div"></div>
+			<button style="width:150px;" class="btn btn-primary" onclick="addPlayer();">+ Add Player</button>
+			<br>
             <br>
             <button style="width:250px;" class="btn btn-primary" onclick="clickContinue();">Continue</button>
+			<br>
         </div>
     </body>
 </html>
