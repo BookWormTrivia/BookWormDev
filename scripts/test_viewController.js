@@ -3,11 +3,11 @@ function getQuestionClick() {
     getOneMCQuestion(difficulty);
 }
 
-function displayQuestion(q) {
-    question = q['question'];
+function displayQuestion(question, answers) {
     $("#question").text(question);
-    $("#a").text(q['correct_answer']);
-    $("#b").text(q['incorrect_answers'][0]);
-    $("#c").text(q['incorrect_answers'][1]);
-    $("#d").text(q['incorrect_answers'][2]);
+    $("#a").text(answers[0]);
+    $("#b").text(answers[1]);
+    $("#c").text(answers[2]);
+    $("#d").text(answers[3]);
+    console.log(difficulty);
 }

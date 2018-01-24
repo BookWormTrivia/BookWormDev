@@ -16,6 +16,11 @@ function fetchQuestion(url) {
 }
 
 function callback(data) {
-    question = data['results'][0];
-    displayQuestion(question);
+    var q = data['results'][0];
+    var question = q['question'];
+    var correct = q['correct_answer'];
+    var incorrect = q['incorrect_answers'];
+    var answers = incorrect;
+    answers.push(correct);
+    displayQuestion(question, answers);
 }
