@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="./res/bootstrap.min.css">
+        <script type="text/javascript" src="scripts/localController.js"></script>
+        <script type="text/javascript" src="scripts/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="scripts/api/api.js"></script>
+    </head>
+    
+    <body id="local-content">
+        <div class="jumbotron">
+            <h1 style="white-space:nowrap;"><img style="width:60px; height:60px; margin-right:10px;" src="res/images/bookworm.png"/>BookWorm Trivia</h1>
+        </div>
+        
+        <div id="set-online" style="text-align: center;" class="container">
+            <p class="h2" style="margin-bottom:20px;">Enter Player Names:</p>
+            <input id="player-one-input" style="height:30px; width:280px; font-size:16px; padding:5px; border:2px solid #0C60FE" placeholder="Player 1">
+            <br>
+            <br>
+            <input id="player-two-input" style="height:30px; width:280px; font-size:16px; padding:5px; border:2px solid #0C60FE" placeholder="Player 2">
+            <br>
+            <br>
+            <button style="width:250px;" class="btn btn-primary" onclick="clickContinue();">Continue</button>
+        </div>
+    </body>
+</html>
