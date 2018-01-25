@@ -72,7 +72,7 @@ function clickContinue() {
             <h1 style="white-space:nowrap;"><img style="width:60px; height:60px; margin-right:10px;" src="res/images/bookworm.png" onclick="window.location='index.html'"/>BookWorm Trivia</h1>
         </div>
         
-		<div style="margin-left:80px;">
+		<div style="margin-left:80px; margin-right:80px;">
 			<div style="display:inline-block; font-size:20px;">`
 			+ playerString + 
 			`</div>
@@ -85,32 +85,79 @@ function clickContinue() {
 			<h2 id="question">Question</h2>
 			<br/>
 			<div style="margin-left:20px;">
-				<button class="btn btn-primary">A</button><span id="a"> Answer A</span>
+				<div id="a-div">
+					<button class="btn btn-primary">A</button><span id="a"> Answer A</span>
+				</div>
 				<br/>
+				<div id="b-div">
+					<button class="btn btn-primary">B</button><span id="b"> Answer B</span>
+				</div>
 				<br/>
-				<button class="btn btn-primary">B</button><span id="b"> Answer B</span>
+				<div id="c-div">
+					<button class="btn btn-primary">C</button><span id="c"> Answer C</span>
+				</div>
 				<br/>
-				<br/>
-				<button class="btn btn-primary">C</button><span id="c"> Answer C</span>
-				<br/>
-				<br/>
-				<button class="btn btn-primary">D</button><span id="d"> Answer D</span>
-				<br/>
+				<div id="d-div">
+					<button class="btn btn-primary">D</button><span id="d"> Answer D</span>
+				</div>
 				<br/>
 			</div>
 		</div>;`
 }
 
+var buttonOptions = ["a","b","c","d"];
+var answered = false;
+var correct = "";
+
 function getQuestionClick() {
+    for (i = 0; i < buttonOptions.length; i++) {
+        currentButton = buttonOptions[i];
+        document.getElementById(currentButton + '-div').innerHTML = '<button id="' + currentButton + `-button" class="btn btn-primary" onclick="checkAnswer('` + currentButton + `');">` + currentButton[0].toUpperCase() + `</button><span id="` + currentButton + `">` + document.getElementById(currentButton).innerHTML + `</span>`;
+    }
     difficulty = "easy";
+    answered = false;
     getOneMCQuestion(difficulty);
 }
 
 function displayQuestion(question, answers) {
+    correct = answers[3];
+    for (var i = answers.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = answers[i];
+        answers[i] = answers[j];
+        answers[j] = temp;
+    }
+    for (var i = answers.length - 1; i >= 0; i--) {
+        if (correct == answers[i]) {
+            if (i==1) {
+                correct = 'b';
+            } else if (i==2) {
+                correct = 'c';
+            } else if (i==3) {
+                correct = 'd';
+            } else {
+                correct = 'a';
+            }
+        }
+    }
+
     $("#question").text(question);
-    $("#a").text(answers[0]);
-    $("#b").text(answers[1]);
-    $("#c").text(answers[2]);
-    $("#d").text(answers[3]);
-    console.log(difficulty);
+    $("#a").text(makeString(answers[0]));
+    $("#b").text(makeString(answers[1]));
+    $("#c").text(makeString(answers[2]));
+    $("#d").text(makeString(answers[3]));
+}
+
+function checkAnswer(answer) {
+    if (!answered) {
+        // currentButton = answer;
+        // currentButton = correct;
+        if (answer == correct) {
+            $('#' + answer + '-button').css('backgroundColor','green');
+        } else {
+            $('#' + answer + '-button').css('backgroundColor','red');
+            $('#' + correct + '-button').css('backgroundColor','green');
+        }
+        answered = true;
+    }
 }
