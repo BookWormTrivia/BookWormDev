@@ -17,10 +17,12 @@ function fetchQuestion(url) {
 
 function callback(data) {
     var q = data['results'][0];
-    var question = q['question'];
-    var correct = q['correct_answer'];
     var incorrect = q['incorrect_answers'];
-    var answers = incorrect;
-    answers.push(correct);
-    displayQuestion(question, answers);
+    incorrect.push(q['correct_answer']);
+    displayQuestion(makeString(q['question']), incorrect);
+}
+
+function makeString(input) {
+    var doc = new DOMParser().parseFromString(input, "text/html");
+    return doc.documentElement.textContent;
 }

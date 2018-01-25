@@ -14,7 +14,6 @@ function getQuestionClick() {
 }
 
 function displayQuestion(question, answers) {
-    console.log(answers[3]);
     correct = answers[3];
     for (var i = answers.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
@@ -24,8 +23,6 @@ function displayQuestion(question, answers) {
     }
     for (var i = answers.length - 1; i >= 0; i--) {
         if (correct == answers[i]) {
-            console.log(correct);
-            console.log(i);
             if (i==1) {
                 correct = 'b';
             } else if (i==2) {
@@ -36,15 +33,13 @@ function displayQuestion(question, answers) {
                 correct = 'a';
             }
         }
-        console.log(correct);
     }
 
     $("#question").text(question);
-    $("#a").text(answers[0]);
-    $("#b").text(answers[1]);
-    $("#c").text(answers[2]);
-    $("#d").text(answers[3]);
-    console.log(difficulty);
+    $("#a").text(makeString(answers[0]));
+    $("#b").text(makeString(answers[1]));
+    $("#c").text(makeString(answers[2]));
+    $("#d").text(makeString(answers[3]));
 }
 
 function checkAnswer(answer) {
