@@ -1,15 +1,46 @@
+var playerID = 2;
 var numPlayers = 2;
+var playerList = [1, 2];
+
+function removePlayerFromList(number) {
+	for (var i = 0; i < playerList.length; i++) {
+		if (playerList[i] == number) {
+			playerList.splice(i, 1);
+			break;
+		}
+	}
+}
 
 function addPlayer() {
-	numPlayers++;
-	document.getElementById("add-player-div").innerHTML += `
-    	<input id="player-` + numPlayers + `-input" style="height:30px; width:280px; font-size:16px; padding:5px; border:2px solid #0C60FE" placeholder="Player ` + numPlayers + `">
-		<br>
-		<br>`;
+	if (numPlayers < 10) {
+		playerID++;
+		numPlayers++;
+		playerList.push(playerID);
+		newHTML = `
+			<div id="player-` + playerID + `-div">
+			<input id="player-` + playerID + `-input" style="height:30px; width:280px; font-size:16px; padding:5px; border:2px solid #0C60FE" placeholder="Player Name">
+			<button class="remove-button" style="width:30px; color:red; padding-bottom:1px;" onclick="removePlayer(` + playerID + `);">X</button> 
+			<br>
+			<br>
+			</div>`;
+		document.getElementById("new-players-div").insertAdjacentHTML("beforeend", newHTML);
+		$('.remove-button').css('display','inline');
+	}
+	if (numPlayers == 10) {
+		$('#add-player-div').css('display','none');
+	}
 }
 
 function removePlayer(num) {
-	
+	numPlayers--;
+	document.getElementById("player-" + num + "-div").remove();
+	removePlayerFromList(num);
+	if (numPlayers == 2) {
+		$('.remove-button').css('display','none');
+	}
+	else if (numPlayers == 9) {
+		$('#add-player-div').css('display','inline');
+	}
 }
 
 function clickContinue() {
@@ -26,18 +57,25 @@ function clickContinue() {
     if (playerTwoInput != "") {
         playerTwo = playerTwoInput;
     }
+	
+	var playerString = "";
+	for (var i = 0; i < playerList.length; i++) {
+		var newName = "Player " + (i + 1);
+		var playerInput = document.getElementById("player-" + playerList[i] + "-input").value;
+		if (playerInput != "") {
+			newName = playerInput;
+		}
+		playerString += `<b>` + newName + `: </b><b style="margin-right:10px;">0</b>`;
+	}
     
     document.getElementById("local-content").innerHTML = `
         <div class="jumbotron">
             <h1>BookWorm Trivia</h1>
         </div>
         
-        <div class="container" style="font-size:20px;">
-            <b>` + playerOne + `:</b>
-            <b style="margin-right:10px;">0</b>
-            <b>` + playerTwo+ `:</b>
-            <b>0</b>
-        </div>
+        <div class="container" style="font-size:20px;">`
+        + playerString + 
+        `</div>
         <br>
 
         <div class="container">
