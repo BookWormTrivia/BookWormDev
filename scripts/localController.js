@@ -45,18 +45,6 @@ function removePlayer(num) {
 
 function clickContinue() {
     "use strict";
-    var playerOne = "Player 1";
-    var playerTwo = "Player 2";
-    
-    var playerOneInput = document.getElementById("player-1-input").value;
-    var playerTwoInput = document.getElementById("player-2-input").value;
-    
-    if (playerOneInput != "") {
-        playerOne = playerOneInput;
-    }
-    if (playerTwoInput != "") {
-        playerTwo = playerTwoInput;
-    }
 	
 	var playerString = "";
 	for (var i = 0; i < playerList.length; i++) {
