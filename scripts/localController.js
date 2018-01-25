@@ -69,7 +69,7 @@ function clickContinue() {
     
     document.getElementById("local-content").innerHTML = `
         <div class="jumbotron">
-            <h1>BookWorm Trivia</h1>
+            <h1 style="white-space:nowrap;"><img style="width:60px; height:60px; margin-right:10px;" src="res/images/bookworm.png" onclick="window.location='index.html'"/>BookWorm Trivia</h1>
         </div>
         
 		<div style="margin-left:80px;">
