@@ -3,6 +3,7 @@ var numPlayers = 2;
 var playerList = [1, 2];
 
 function removePlayerFromList(number) {
+	"use strict";
 	for (var i = 0; i < playerList.length; i++) {
 		if (playerList[i] == number) {
 			playerList.splice(i, 1);
@@ -50,10 +51,20 @@ function clickContinue() {
 	for (var i = 0; i < playerList.length; i++) {
 		var newName = "Player " + (i + 1);
 		var playerInput = document.getElementById("player-" + playerList[i] + "-input").value;
+		playerInput = playerInput.replace(/\W/g, '');
 		if (playerInput != "") {
-			newName = playerInput;
+			if (playerInput.length > 10) {
+				var shortName = "";
+				for (var j = 0; j < 10; j++) {
+					shortName += playerInput[i];
+				}
+				newName = shortName;
+			}
+			else {
+				newName = playerInput;
+			}
 		}
-		playerString += `<b>` + newName + `: </b><b style="margin-right:10px;">0</b>`;
+		playerString += `<div style="float:left;"><b>` + newName + `: </b><b style="margin-right:10px;">0</b></div>`;
 	}
     
     document.getElementById("local-content").innerHTML = `
@@ -61,35 +72,33 @@ function clickContinue() {
             <h1>BookWorm Trivia</h1>
         </div>
         
-        <div class="container" style="font-size:20px;">`
-        + playerString + 
-        `</div>
-        <br>
+		<div style="margin-left:80px;">
+			<div style="display:inline-block; font-size:20px;">`
+			+ playerString + 
+			`</div>
+			<br>
+			<br>
 
-        <div class="container">
-            <button class="btn btn-primary" onclick="getQuestionClick();">Get Questions</button>
-        </div>
-        <br/>
-        <div class="container">
-            <h2 id="question">Question</h2>
-            <br/>
-            <div class="container">
-                <button class="btn btn-primary">A</button><span id="a"> Answer A</span>
-            </div>
-            <br/>
-            <div class="container">
-                <button class="btn btn-primary">B</button><span id="b"> Answer B</span>
-            </div>
-            <br/>
-            <div class="container">
-                <button class="btn btn-primary">C</button><span id="c"> Answer C</span>
-            </div>
-            <br/>
-            <div class="container">
-                <button class="btn btn-primary">D</button><span id="d"> Answer D</span>
-            </div>
-            <br/>
-        </div>`;
+			<button class="btn btn-primary" onclick="getQuestionClick();">Get Questions</button>
+			<br/>
+			<br/>
+			<h2 id="question">Question</h2>
+			<br/>
+			<div style="margin-left:20px;">
+				<button class="btn btn-primary">A</button><span id="a"> Answer A</span>
+				<br/>
+				<br/>
+				<button class="btn btn-primary">B</button><span id="b"> Answer B</span>
+				<br/>
+				<br/>
+				<button class="btn btn-primary">C</button><span id="c"> Answer C</span>
+				<br/>
+				<br/>
+				<button class="btn btn-primary">D</button><span id="d"> Answer D</span>
+				<br/>
+				<br/>
+			</div>
+		</div>;`
 }
 
 function getQuestionClick() {
