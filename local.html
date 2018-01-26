@@ -1,6 +1,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="./res/bootstrap.min.css">
+		<link rel="stylesheet" href="./res/private_styles.css">
         <script type="text/javascript" src="scripts/localController.js"></script>
         <script type="text/javascript" src="scripts/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="scripts/api/api.js"></script>
@@ -14,14 +15,14 @@
         <div id="set-online" style="text-align: center;" class="container">
             <p class="h2" style="margin-bottom:20px;">Enter Player Names:</p>
 			<div id="player-1-div">
-				<input id="player-1-input" style="height:30px; width:280px; font-size:16px; padding:5px; border:2px solid #0C60FE" placeholder="Player Name">
-				<button class="remove-button btn btn-primary" style="padding-top:3px; padding-bottom: 3px; margin-bottom:3px; display:none;" onclick="removePlayer(1);">X</button> 
+				<input id="player-1-input" class="player-input" placeholder="Player Name">
+				<button class="remove-button btn btn-primary" onclick="removePlayer(1);">X</button> 
 				<br>
 				<br>
 			</div>
 			<div id="player-2-div">
-				<input id="player-2-input" style="height:30px; width:280px; font-size:16px; padding:5px; border:2px solid #0C60FE" placeholder="Player Name">
-				<button class="remove-button btn btn-primary" style="padding-top:3px; padding-bottom: 3px; margin-bottom:3px; display:none;" onclick="removePlayer(2);">X</button>
+				<input id="player-2-input" class="player-input" placeholder="Player Name">
+				<button class="remove-button btn btn-primary" onclick="removePlayer(2);">X</button>
 				<br>
 				<br>
 			</div>

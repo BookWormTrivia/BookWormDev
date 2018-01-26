@@ -1,0 +1,14 @@
+.remove-button {
+	padding-top: 3px; 
+	padding-bottom: 3px; 
+	margin-bottom: 3px; 
+	display: none;
+}
+
+.player-input {
+	height:30px; 
+	width:280px; 
+	font-size:16px; 
+	padding:5px; 
+	border:2px solid #0C60FE;
+}

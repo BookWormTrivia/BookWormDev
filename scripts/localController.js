@@ -19,8 +19,8 @@ function addPlayer() {
 		playerList.push(playerID);
 		newHTML = `
 			<div id="player-` + playerID + `-div">
-			<input id="player-` + playerID + `-input" style="height:30px; width:280px; font-size:16px; padding:5px; border:2px solid #0C60FE" placeholder="Player Name">
-			<button class="remove-button btn btn-primary" style="padding-top:3px; padding-bottom: 3px; margin-bottom:3px;" onclick="removePlayer(` + playerID + `);">X</button> 
+			<input id="player-` + playerID + `-input" class="player-input" placeholder="Player Name">
+			<button class="remove-button btn btn-primary" onclick="removePlayer(` + playerID + `);">X</button> 
 			<br>
 			<br>
 			</div>`;
