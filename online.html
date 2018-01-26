@@ -1,20 +1,21 @@
 <html>
     <head>
         <link rel="stylesheet" href="./res/bootstrap.min.css">
+		<link rel="stylesheet" href="./res/private_styles.css">
         <script type="text/javascript" src="scripts/onlineController.js"></script>
     </head>
     
     <body>
         <div class="jumbotron">
-            <h1 style="white-space:nowrap;"><img style="width:60px; height:60px; margin-right:10px;" src="res/images/bookworm.png" onclick="window.location='index.html'"/>BookWorm Trivia</h1>
+            <h1 class="top-header"><img class="icon" src="res/images/bookworm.png" onclick="window.location='index.html'"/>BookWorm Trivia</h1>
         </div>
         
         <div id="set-online" style="text-align: center;" class="container">
             <p class="h2" style="margin-bottom:20px;">Specify Play Type:</p>
-            <button style="width:250px; margin-top:20px;" class="btn btn-primary">Random</button>
+            <button style="margin-top:20px;" class="btn btn-primary regular-button">Random</button>
             <br>
             <br>
-            <button style="width:250px;" class="btn btn-primary" onclick="clickPrivateRoom();">Private Room</button>
+            <button class="btn btn-primary regular-button" onclick="clickPrivateRoom();">Private Room</button>
             <br>
         </div>
     </body>

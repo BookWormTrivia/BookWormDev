@@ -13,6 +13,14 @@
 	border: 2px solid #0C60FE;
 }
 
+#room-input {
+	height: 30px; 
+	width: 280px; 
+	font-size: 16px; 
+	padding: 5px; 
+	border: 2px solid #0C60FE;
+}
+
 .top-header {
 	white-space: nowrap;
 }
@@ -21,4 +29,13 @@
 	width: 60px; 
 	height: 60px; 
 	margin-right: 10px;
+}
+
+.home-button {
+	width: 25%; 
+	min-width: 170px;
+}
+
+.regular-button {
+	width: 250px;
 }
