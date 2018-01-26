@@ -110,13 +110,13 @@ var answered = false;
 var correct = "";
 
 function getQuestionClick() {
+    difficulty = "easy";
+    answered = false;
+    getOneMCQuestion(difficulty);
     for (i = 0; i < buttonOptions.length; i++) {
         currentButton = buttonOptions[i];
         document.getElementById(currentButton + '-div').innerHTML = '<button id="' + currentButton + `-button" class="btn btn-primary" onclick="checkAnswer('` + currentButton + `');">` + currentButton[0].toUpperCase() + `</button><span id="` + currentButton + `">` + document.getElementById(currentButton).innerHTML + `</span>`;
     }
-    difficulty = "easy";
-    answered = false;
-    getOneMCQuestion(difficulty);
 }
 
 function displayQuestion(question, answers) {
