@@ -6,9 +6,19 @@
 }
 
 .player-input {
-	height:30px; 
-	width:280px; 
-	font-size:16px; 
-	padding:5px; 
-	border:2px solid #0C60FE;
+	height: 30px; 
+	width: 280px; 
+	font-size: 16px; 
+	padding: 5px; 
+	border: 2px solid #0C60FE;
+}
+
+.top-header {
+	white-space: nowrap;
+}
+
+.icon {
+	width: 60px; 
+	height: 60px; 
+	margin-right: 10px;
 }
