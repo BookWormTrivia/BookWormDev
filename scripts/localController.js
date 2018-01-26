@@ -56,7 +56,7 @@ function clickContinue() {
 			if (playerInput.length > 10) {
 				var shortName = "";
 				for (var j = 0; j < 10; j++) {
-					shortName += playerInput[i];
+					shortName += playerInput[j];
 				}
 				newName = shortName;
 			}
