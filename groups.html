@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="./res/bootstrap.min.css"/>
+        <link rel="stylesheet" href="./res/groups.css"/>
+        <script type="text/javascript" src="scripts/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="scripts/api/api.js"></script>
+        <script type="text/javascript" src="scripts/groupsController.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("#game_screen").hide();
+                $("#create_group").hide();
+            })
+        </script>
+    </head>
+
+    <body>
+        <div class="jumbotron">
+            <h1 style="white-space:nowrap;"><img style="width:60px; height:60px; margin-right:10px;" src="res/images/bookworm.png" onclick="window.location='index.html'"/>BookWorm Trivia</h1>
+        </div>
+
+        <div id="groups_screen" class="container" align="center">
+            <div id="play_with_group">
+                <h3>Play with a Group</h3>
+                <br/>
+                <h4>Group Name</h4>
+                <form method="post" action="">
+                    <input type="text" /> <br /> <br />
+                    <input type="submit" Value="Play" class="btn btn-primary" />
+                </form>
+                <span>Don't have a group?</span>
+                <span class="link" onclick="toggleCreateGroup();">Create one</span>
+            </div>
+            <div id="create_group" class="container" align="center">
+                <h3>Create a Group</h3>
+                <br/>
+                <h4>Enter Group Name</h4>
+                <form method="post" action="http://ec2-18-221-224-2.us-east-2.compute.amazonaws.com:4321/add/groups/">
+                    <input type="text" name="group_name" /> <br /> <br />
+                    <input type="submit" Value="Submit" class="btn btn-primary" />
+                </form>
+                <span>Already have a group?</span>
+                <span class="link" onclick="toggleCreateGroup();">Play with an existing one</span>
+            </div>
+        </div>
+        
+        
+        
+        <div id="game_screen">
+            <div class="container">
+                <button class="btn btn-primary" onclick="getGroupQuestionClick();">Get Questions</button>
+            </div>
+            <br/>
+            <div class="container">
+                <h2 id="group_name">Group</h2>
+                <br/>
+                <div id="a-div" class="container">
+                    <button id="a-button" class="btn btn-primary" onclick="checkAnswer('a');">A</button><span id="a"> Answer A</span>
+                </div>
+                <br/>
+                <div id="b-div" class="container">
+                    <button id="b-button" class="btn btn-primary" onclick="checkAnswer('b');">B</button><span id="b"> Answer B</span>
+                </div>
+                <br/>
+                <div id="c-div" class="container">
+                    <button id="c-button" class="btn btn-primary" onclick="checkAnswer('c');">C</button><span id="c"> Answer C</span>
+                </div>
+                <br/>
+                <div id="d-div" class="container">
+                    <button id="d-button" class="btn btn-primary" onclick="checkAnswer('d');">D</button><span id="d"> Answer D</span>
+                </div>
+                <br/>
+            </div>
+        </div>
+
+    </body>
+</html>
