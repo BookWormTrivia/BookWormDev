@@ -2,6 +2,10 @@ var playerID = 2;
 var numPlayers = 2;
 var playerList = [1, 2];
 
+$(document).ready(function() {
+   $("#game_screen").hide(); 
+});
+
 function removePlayerFromList(number) {
 	"use strict";
 	for (var i = 0; i < playerList.length; i++) {
@@ -65,44 +69,10 @@ function clickContinue() {
 			}
 		}
 		playerString += `<div style="float:left;"><b>` + newName + `: </b><b style="margin-right:10px;">0</b></div>`;
-	}
-    
-    document.getElementById("local-content").innerHTML = `
-        <div class="jumbotron">
-            <h1 style="white-space:nowrap;"><img style="width:60px; height:60px; margin-right:10px;" src="res/images/bookworm.png" onclick="window.location='index.html'"/>BookWorm Trivia</h1>
-        </div>
-        
-		<div style="margin-left:80px; margin-right:80px;">
-			<div style="display:inline-block; font-size:20px;">`
-			+ playerString + 
-			`</div>
-			<br>
-			<br>
-
-			<button class="btn btn-primary" onclick="getQuestionClick();">Get Questions</button>
-			<br/>
-			<br/>
-			<h2 id="question">Question</h2>
-			<br/>
-			<div style="margin-left:20px;">
-				<div id="a-div">
-					<button class="btn btn-primary">A</button><span id="a"> Answer A</span>
-				</div>
-				<br/>
-				<div id="b-div">
-					<button class="btn btn-primary">B</button><span id="b"> Answer B</span>
-				</div>
-				<br/>
-				<div id="c-div">
-					<button class="btn btn-primary">C</button><span id="c"> Answer C</span>
-				</div>
-				<br/>
-				<div id="d-div">
-					<button class="btn btn-primary">D</button><span id="d"> Answer D</span>
-				</div>
-				<br/>
-			</div>
-		</div>;`
+	} 
+    $("#enter_players").hide();
+    $("#game_screen").show();
+    $("#players").html(playerString);
 }
 
 var buttonOptions = ["a","b","c","d"];

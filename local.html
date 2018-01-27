@@ -2,38 +2,74 @@
     <head>
         <link rel="stylesheet" href="./res/bootstrap.min.css">
 		<link rel="stylesheet" href="./res/private_styles.css">
-        <script type="text/javascript" src="scripts/localController.js"></script>
         <script type="text/javascript" src="scripts/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="scripts/api/api.js"></script>
+        <script type="text/javascript" src="scripts/localController.js"></script>
     </head>
     
-    <body id="local-content">
+    <body>
+        
         <div class="jumbotron">
             <h1 class="top-header"><img class="icon" src="res/images/bookworm.png" onclick="window.location='index.html'"/>BookWorm Trivia</h1>
         </div>
         
-        <div id="set-online" style="text-align: center;" class="container">
-            <p class="h2" style="margin-bottom:20px;">Enter Player Names:</p>
-			<div id="player-1-div">
-				<input id="player-1-input" class="player-input" placeholder="Player Name">
-				<button class="remove-button btn btn-primary" onclick="removePlayer(1);">X</button> 
-				<br>
-				<br>
-			</div>
-			<div id="player-2-div">
-				<input id="player-2-input" class="player-input" placeholder="Player Name">
-				<button class="remove-button btn btn-primary" onclick="removePlayer(2);">X</button>
-				<br>
-				<br>
-			</div>
-			<div id="new-players-div"></div>
-			<div id="add-player-div">
-				<button style="width:150px;" class="btn btn-primary" onclick="addPlayer();">+ Add Player</button>
-				<br>
-				<br>
-			</div>
-            <button style="margin-bottom:40px;" class="btn btn-primary regular-button" onclick="clickContinue();">Continue</button>
+        <div id="enter_players">
+        
+            <div id="set-online" style="text-align: center;" class="container">
+                <p class="h2" style="margin-bottom:20px;">Enter Player Names:</p>
+                <div id="player-1-div">
+                    <input id="player-1-input" class="player-input" placeholder="Player Name">
+                    <button class="remove-button btn btn-primary" onclick="removePlayer(1);">X</button> 
+                    <br>
+                    <br>
+                </div>
+                <div id="player-2-div">
+                    <input id="player-2-input" class="player-input" placeholder="Player Name">
+                    <button class="remove-button btn btn-primary" onclick="removePlayer(2);">X</button>
+                    <br>
+                    <br>
+                </div>
+                <div id="new-players-div"></div>
+                <div id="add-player-div">
+                    <button style="width:150px;" class="btn btn-primary" onclick="addPlayer();">+ Add Player</button>
+                    <br>
+                    <br>
+                </div>
+                <button style="margin-bottom:40px;" class="btn btn-primary regular-button" onclick="clickContinue();">Continue</button>
+                <br>
+            </div>
+        </div>
+        
+        <div id="game_screen">
+            <div style="margin-left:80px; margin-right:80px;">
+			<div id="players" style="display:inline-block; font-size:20px;"> </div>
 			<br>
+			<br>
+
+			<button class="btn btn-primary" onclick="getQuestionClick();">Get Questions</button>
+			<br/>
+			<br/>
+			<h2 id="question">Question</h2>
+			<br/>
+			<div style="margin-left:20px;">
+				<div id="a-div">
+					<button class="btn btn-primary">A</button><span id="a"> Answer A</span>
+				</div>
+				<br/>
+				<div id="b-div">
+					<button class="btn btn-primary">B</button><span id="b"> Answer B</span>
+				</div>
+				<br/>
+				<div id="c-div">
+					<button class="btn btn-primary">C</button><span id="c"> Answer C</span>
+				</div>
+				<br/>
+				<div id="d-div">
+					<button class="btn btn-primary">D</button><span id="d"> Answer D</span>
+				</div>
+				<br/>
+			</div>
+		</div>
         </div>
     </body>
 </html>
