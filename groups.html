@@ -9,6 +9,7 @@
             $(document).ready(function() {
                 $("#game_screen").hide();
                 $("#create_group").hide();
+                $("#create_question").hide();
             })
         </script>
     </head>
@@ -46,9 +47,10 @@
         
         <div id="game_screen">
             <div class="container">
-                <h1 id="group_name">Group: </h1>
+                <h1>Group: <span id="group_name"></span></h1>
                 <br/>
-                <button class="btn btn-primary" onclick="getGroupQuestionClick();">Get Questions</button>
+                <button class="btn btn-primary" onclick="getGroupQuestionClick();">Next Question</button>
+                <button class="btn btn-primary float_right" onclick="createQuestionClick();">Create a Question</button>
             </div>
             <br/>
             <div class="container">
@@ -71,6 +73,40 @@
                 </div>
                 <br/>
             </div>
+        </div>
+        
+        <div id="create_question" class="container">
+            <form method="post" action="http://ec2-18-221-224-2.us-east-2.compute.amazonaws.com:4321/add/questions/">
+            <h2>Create a Question</h2>
+            <br/>
+            <table>
+                <tr>
+                    <td><strong>Group Name</strong></td>
+                    <td><input type="text" name="group_name" /></td>
+                </tr>
+                <tr>
+                    <td>Question</td>
+                    <td><input type="text" name="question" /></td>
+                </tr>
+                <tr>
+                    <td>Correct Answer</td>
+                    <td><input type="text" name="correct_answer" /></td>
+                </tr>
+                <tr>
+                    <td>Incorrect Answer 1</td>
+                    <td><input type="text" name="incorrect_1" /></td>
+                </tr>
+                <tr>
+                    <td>Incorrect Answer 2</td>
+                    <td><input type="text" name="incorrect_2" /></td>
+                </tr>
+                <tr>
+                    <td>Incorrect Answer 3</td>
+                    <td><input type="text" name="incorrect_3" /></td>
+                </tr>
+            </table>
+            <input type="submit" class="btn btn-primary"/>
+        </form>
         </div>
 
     </body>

@@ -7,8 +7,8 @@ function getOneMCQuestion(difficulty) {
 }
 
 function getGroupQuestions(id) {
-    url = 'http://ec2-18-221-224-2.us-east-2.compute.amazonaws.com:4321/questions/';
-    url += id;
+    url = 'http://ec2-18-221-224-2.us-east-2.compute.amazonaws.com:4321/questions/id/';
+    url += id + '/';
     fetchQuestion(url);
 }
 
@@ -22,11 +22,34 @@ function fetchQuestion(url) {
 }
 
 function callback(data) {
-    data = JSON.parse(data);
+    try { data = JSON.parse(data); }
+    catch (err) { data = data; }
     var q = data['results'][0];
+    console.log(q);
     var incorrect = q['incorrect_answers'];
     incorrect.push(q['correct_answer']);
     displayQuestion(makeString(q['question']), incorrect);
+}
+
+function checkForGroup(url) {
+    $.ajax({
+        url: url,
+        success: function(data) {
+            exists_callback(data);
+        },
+        error: function() {
+            exists_callback('failed');
+        }
+    });
+}
+
+function exists_callback(data) {
+    if(data == 'failed') {
+        alert('This group does not exist. \n You can create one below.')
+    }
+    else {
+        callback(data);
+    }
 }
 
 function makeString(input) {
