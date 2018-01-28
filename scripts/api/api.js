@@ -22,8 +22,10 @@ function fetchQuestion(url) {
 }
 
 function callback(data) {
-    data = JSON.parse(data);
+    try { data = JSON.parse(data); }
+    catch (err) { data = data; }
     var q = data['results'][0];
+    console.log(q);
     var incorrect = q['incorrect_answers'];
     incorrect.push(q['correct_answer']);
     displayQuestion(makeString(q['question']), incorrect);
@@ -44,6 +46,9 @@ function checkForGroup(url) {
 function exists_callback(data) {
     if(data == 'failed') {
         alert('This group does not exist. \n You can create one below.')
+    }
+    else {
+        callback(data);
     }
 }
 
