@@ -6,20 +6,20 @@
         <script type="text/javascript" src="scripts/api/api.js"></script>
         <script type="text/javascript" src="scripts/localController.js"></script>
     </head>
-    
+
     <body>
-        
+
         <div class="jumbotron">
             <h1 class="top-header"><img class="icon" src="res/images/bookworm.png" onclick="window.location='index.html'"/>BookWorm Trivia</h1>
         </div>
-        
+
         <div id="enter_players">
-        
+
             <div id="set-online" style="text-align: center;" class="container">
                 <p class="h2" style="margin-bottom:20px;">Enter Player Names:</p>
                 <div id="player-1-div">
                     <input id="player-1-input" class="player-input" placeholder="Player Name">
-                    <button class="remove-button btn btn-primary" onclick="removePlayer(1);">X</button> 
+                    <button class="remove-button btn btn-primary" onclick="removePlayer(1);">X</button>
                     <br>
                     <br>
                 </div>
@@ -39,14 +39,13 @@
                 <br>
             </div>
         </div>
-        
-        <div id="game_screen">
-            <div style="margin-left:80px; margin-right:80px;">
+
+        <div id="game_screen" style="margin-left:80px; margin-right:80px;">
 			<div id="players" style="display:inline-block; font-size:20px;"> </div>
 			<br>
 			<br>
 
-			<button class="btn btn-primary" onclick="getQuestionClick();">Get Questions</button>
+			<button id="nextPlayer" class="btn btn-primary" onclick="getQuestionClick();">Next Player</button>
 			<br/>
 			<br/>
 			<h2 id="question">Question</h2>
@@ -69,7 +68,6 @@
 				</div>
 				<br/>
 			</div>
-		</div>
         </div>
     </body>
 </html>
