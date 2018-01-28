@@ -4,6 +4,7 @@ var playerList = [1, 2];
 
 $(document).ready(function() {
    $("#game_screen").hide(); 
+   $("#leaderboard").hide();
 });
 
 function removePlayerFromList(number) {
@@ -72,7 +73,10 @@ function clickContinue() {
 	} 
     $("#enter_players").hide();
     $("#game_screen").show();
+    $("#leaderboard").show();
     $("#players").html(playerString);
+
+    initLeaderboard();
 }
 
 var buttonOptions = ["a","b","c","d"];
@@ -130,4 +134,24 @@ function checkAnswer(answer) {
         }
         answered = true;
     }
+}
+
+function initLeaderboard() {
+	document.getElementById("0").value += playerList[0];
+	document.getElementById("1").value += playerList[0];
+
+	var scores = document.getElementById("scores");
+	if (playerList.length > 2) {
+		for (var i = 2; i < playerList.length; i++) {
+			scores.innerHTML += `<p id="${i}">${i}. ${scoresList[i]}</p>\n<br/>`
+		}
+	}
+}
+
+function updateLeaderboard() {
+	var orderedScores = jQuery.extend(true, {}, scoresList).sort(); // Deep Copy
+
+	for (var i = 0; i < scoresList.length; i++) {
+		document.getElementById(i).value = `${i+1}. ${scoresDict[scoresList[i]]}\t${orderedScores[i]}`
+	}
 }
