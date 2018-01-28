@@ -44,11 +44,8 @@ function toggleCreateGroup() {
 function playGroupClick() {
     var group_name = $("#play_group_name").val();
     console.log(group_name);
-    if(groupExists(group_name)) {
-        $("#groups_screen").hide();
-        $("#group_name").append(group_name);
-        $("#game_screen").fadeIn();
-    }
+    var url = "http://ec2-18-221-224-2.us-east-2.compute.amazonaws.com:4321/questions/name/" + group_name + '/'
+    checkForGroup(url);
 }
 
 function groupExists() {
