@@ -3,3 +3,7 @@
     color: blue;
     cursor: pointer;
 }
+
+.float_right {
+    float: right;
+}

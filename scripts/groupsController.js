@@ -54,3 +54,11 @@ function playGroupClick() {
 function groupExists() {
     return true;
 }
+
+function createQuestionClick() {
+    let group_name = $("#group_name").text();
+    $("#game_screen").hide();
+    $("#create_question").fadeIn();
+    $("#group_name").val(group_name);
+    
+}
