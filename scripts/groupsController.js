@@ -34,10 +34,23 @@ function displayQuestion(question, answers) {
     $("#b").text(answers[1]);
     $("#c").text(answers[2]);
     $("#d").text(answers[3]);
-    console.log(difficulty);
 }
 
 function toggleCreateGroup() {
     $("#play_with_group").toggle();
     $("#create_group").fadeToggle();
+}
+
+function playGroupClick() {
+    var group_name = $("#play_group_name").val();
+    console.log(group_name);
+    if(groupExists(group_name)) {
+        $("#groups_screen").hide();
+        $("#group_name").append(group_name);
+        $("#game_screen").fadeIn();
+    }
+}
+
+function groupExists() {
+    return true;
 }

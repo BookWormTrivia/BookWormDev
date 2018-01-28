@@ -23,10 +23,9 @@
                 <h3>Play with a Group</h3>
                 <br/>
                 <h4>Group Name</h4>
-                <form method="post" action="">
-                    <input type="text" /> <br /> <br />
-                    <input type="submit" Value="Play" class="btn btn-primary" />
-                </form>
+                <input type="text" id="play_group_name" /> <br /> <br />
+                <button onclick="playGroupClick();" class="btn btn-primary">Play</button>
+                <br/><br/>
                 <span>Don't have a group?</span>
                 <span class="link" onclick="toggleCreateGroup();">Create one</span>
             </div>
@@ -47,11 +46,13 @@
         
         <div id="game_screen">
             <div class="container">
+                <h1 id="group_name">Group: </h1>
+                <br/>
                 <button class="btn btn-primary" onclick="getGroupQuestionClick();">Get Questions</button>
             </div>
             <br/>
             <div class="container">
-                <h2 id="group_name">Group</h2>
+                <h2 id="question">Question</h2>
                 <br/>
                 <div id="a-div" class="container">
                     <button id="a-button" class="btn btn-primary" onclick="checkAnswer('a');">A</button><span id="a"> Answer A</span>
