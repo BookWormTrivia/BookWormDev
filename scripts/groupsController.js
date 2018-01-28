@@ -1,5 +1,5 @@
 function getGroupQuestionClick() {
-    var group = "1";
+    var group = $("#play_group_name").val();
     getGroupQuestions(group);
 }
 
@@ -43,9 +43,9 @@ function toggleCreateGroup() {
 
 function playGroupClick() {
     var group_name = $("#play_group_name").val();
-    console.log(group_name);
     var url = "http://ec2-18-221-224-2.us-east-2.compute.amazonaws.com:4321/questions/name/" + group_name + '/'
     checkForGroup(url);
+    $("#group_name").text(group_name);
 }
 
 function groupExists() {
