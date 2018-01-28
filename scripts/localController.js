@@ -1,16 +1,18 @@
 var playerID = 2;
 var numPlayers = 2;
-var playerList = [1, 2];
+var playerIDList = [1, 2];
+var playerList = [];
+var turn = 0;
 
 $(document).ready(function() {
-   $("#game_screen").hide(); 
+   $("#game_screen").hide();
 });
 
 function removePlayerFromList(number) {
 	"use strict";
-	for (var i = 0; i < playerList.length; i++) {
-		if (playerList[i] == number) {
-			playerList.splice(i, 1);
+	for (var i = 0; i < playerIDList.length; i++) {
+		if (playerIDList[i] == number) {
+			playerIDList.splice(i, 1);
 			break;
 		}
 	}
@@ -20,11 +22,11 @@ function addPlayer() {
 	if (numPlayers < 10) {
 		playerID++;
 		numPlayers++;
-		playerList.push(playerID);
+		playerIDList.push(playerID);
 		newHTML = `
 			<div id="player-` + playerID + `-div">
 			<input id="player-` + playerID + `-input" class="player-input" placeholder="Player Name">
-			<button class="remove-button btn btn-primary" onclick="removePlayer(` + playerID + `);">X</button> 
+			<button class="remove-button btn btn-primary" onclick="removePlayer(` + playerID + `);">X</button>
 			<br>
 			<br>
 			</div>`;
@@ -50,11 +52,11 @@ function removePlayer(num) {
 
 function clickContinue() {
     "use strict";
-	
+
 	var playerString = "";
-	for (var i = 0; i < playerList.length; i++) {
+	for (var i = 0; i < playerIDList.length; i++) {
 		var newName = "Player " + (i + 1);
-		var playerInput = document.getElementById("player-" + playerList[i] + "-input").value;
+		var playerInput = document.getElementById("player-" + playerIDList[i] + "-input").value;
 		playerInput = playerInput.replace(/\W/g, '');
 		if (playerInput != "") {
 			if (playerInput.length > 10) {
@@ -68,11 +70,14 @@ function clickContinue() {
 				newName = playerInput;
 			}
 		}
+		playerList.push(newName);
 		playerString += `<div style="float:left;"><b>` + newName + `: </b><b style="margin-right:10px;">0</b></div>`;
-	} 
+	}
     $("#enter_players").hide();
     $("#game_screen").show();
-    $("#players").html(playerString);
+    //$("#players").html(playerString);
+	var playerTurn = "Its " + playerList[(turn % numPlayers)] + "'s turn!";
+	$("#players").html(playerTurn);
 }
 
 var buttonOptions = ["a","b","c","d"];
@@ -80,6 +85,10 @@ var answered = false;
 var correct = "";
 
 function getQuestionClick() {
+	var playerTurn = "Its " + playerList[(turn % numPlayers)] + "'s turn!";
+	$("#players").html(playerTurn);
+	$("#nextPlayer").hide();
+	$("#players").show();
     difficulty = "easy";
     answered = false;
     getOneMCQuestion(difficulty);
@@ -120,14 +129,15 @@ function displayQuestion(question, answers) {
 
 function checkAnswer(answer) {
     if (!answered) {
-        // currentButton = answer;
-        // currentButton = correct;
         if (answer == correct) {
             $('#' + answer + '-button').css('backgroundColor','green');
         } else {
             $('#' + answer + '-button').css('backgroundColor','red');
             $('#' + correct + '-button').css('backgroundColor','green');
         }
+		turn += 1;
         answered = true;
+		$("#nextPlayer").show();
+		$("#players").hide()
     }
 }
