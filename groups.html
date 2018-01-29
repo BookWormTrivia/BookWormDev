@@ -82,7 +82,7 @@
             <table>
                 <tr>
                     <td><strong>Group Name</strong></td>
-                    <td><input type="text" name="group_name" /></td>
+                    <td><input type="text" name="group_name" id="group_to_add" readonly/></td>
                 </tr>
                 <tr>
                     <td>Question</td>
@@ -105,7 +105,9 @@
                     <td><input type="text" name="incorrect_3" /></td>
                 </tr>
             </table>
+            <br/>
             <input type="submit" class="btn btn-primary"/>
+            <button class="btn btn-primary" onclick="hideCreateQuestion(); return false;">Cancel</button>
         </form>
         </div>
 

@@ -56,6 +56,10 @@ function createQuestionClick() {
     let group_name = $("#group_name").text();
     $("#game_screen").hide();
     $("#create_question").fadeIn();
-    $("#group_name").val(group_name);
-    
+    $("#group_to_add").val(group_name);    
+}
+
+function hideCreateQuestion() {
+    $("#create_question").hide();
+    $("#game_screen").fadeIn();
 }
