@@ -7,3 +7,7 @@
 .float_right {
     float: right;
 }
+
+.padded-left {
+    padding-left: 5px;
+}
