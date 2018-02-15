@@ -2,6 +2,7 @@
     <head>
         <link rel="stylesheet" href="./res/bootstrap.min.css">
 		<link rel="stylesheet" href="./res/private_styles.css">
+        <link rel="stylesheet" href="./res/groups.css"/>
         <script type="text/javascript" src="scripts/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="scripts/api/api.js"></script>
         <script type="text/javascript" src="scripts/localController.js"></script>
@@ -40,7 +41,7 @@
             </div>
         </div>
 
-        <div id="game_screen" style="margin-left:80px; margin-right:80px;">
+        <div id="game_screen" style="margin-left:80px; margin-right:80px;" class="container">
 			<div id="players" style="display:inline-block; font-size:20px;"> </div>
 			<br>
 			<br>
@@ -51,20 +52,24 @@
 			<h2 id="question">Question</h2>
 			<br/>
 			<div style="margin-left:20px;">
-				<div id="a-div">
-					<button class="btn btn-primary">A</button><span id="a"> Answer A</span>
+				<div id="a-div" class="container">
+					<button class="btn btn-primary btn-ans" onclick="checkAnswer('a');">A</button>
+                    <span id="a" class="padded-left"> Answer A</span>
 				</div>
 				<br/>
-				<div id="b-div">
-					<button class="btn btn-primary">B</button><span id="b"> Answer B</span>
+				<div id="b-div" class="container">
+					<button class="btn btn-primary btn-ans" onclick="checkAnswer('b');">B</button>
+                    <span id="b" class="padded-left"> Answer B</span>
 				</div>
 				<br/>
-				<div id="c-div">
-					<button class="btn btn-primary">C</button><span id="c"> Answer C</span>
+				<div id="c-div" class="container">
+					<button class="btn btn-primary btn-ans" onclick="checkAnswer('c');">C</button>
+                    <span id="c" class="padded-left"> Answer C</span>
 				</div>
 				<br/>
-				<div id="d-div">
-					<button class="btn btn-primary">D</button><span id="d"> Answer D</span>
+				<div id="d-div" class="container">
+					<button class="btn btn-primary btn-ans" onclick="checkAnswer('a');">D</button>
+                    <span id="d" class="padded-left"> Answer D</span>
 				</div>
 				<br/>
 			</div>

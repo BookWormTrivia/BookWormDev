@@ -94,8 +94,9 @@ function getQuestionClick() {
     getOneMCQuestion(difficulty);
     for (i = 0; i < buttonOptions.length; i++) {
         currentButton = buttonOptions[i];
-        document.getElementById(currentButton + '-div').innerHTML = '<button id="' + currentButton + `-button" class="btn btn-primary" onclick="checkAnswer('` + currentButton + `');">` + currentButton[0].toUpperCase() + `</button><span id="` + currentButton + `">` + document.getElementById(currentButton).innerHTML + `</span>`;
+        document.getElementById(currentButton + '-div').innerHTML = '<button id="' + currentButton + `-button" class="btn btn-primary" onclick="checkAnswer('` + currentButton + `');">` + currentButton[0].toUpperCase() + `</button><span id="` + currentButton + `" class="padded-left">` + document.getElementById(currentButton).innerHTML + `</span>`;
     }
+    $(".btn-ans").css('background-color', '#007bff')
 }
 
 function displayQuestion(question, answers) {
@@ -129,9 +130,12 @@ function displayQuestion(question, answers) {
 
 function checkAnswer(answer) {
     if (!answered) {
+        console.log("hey!");
         if (answer == correct) {
+            console.log("correct")
             $('#' + answer + '-button').css('backgroundColor','green');
         } else {
+            console.log("incorrect")
             $('#' + answer + '-button').css('backgroundColor','red');
             $('#' + correct + '-button').css('backgroundColor','green');
         }
