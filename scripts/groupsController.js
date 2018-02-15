@@ -1,6 +1,13 @@
+var answered;
 function getGroupQuestionClick() {
     var group = $("#play_group_name").val();
     getGroupQuestions(group);
+    answered = false;
+    resetButtonColors();
+}
+
+function resetButtonColors() {
+    $(".btn-ans").css('background-color', '#007bff');
 }
 
 function displayQuestion(question, answers) {
@@ -62,4 +69,16 @@ function createQuestionClick() {
 function hideCreateQuestion() {
     $("#create_question").hide();
     $("#game_screen").fadeIn();
+}
+
+function checkAnswer(answer) {
+    if (!answered) {
+        if (answer == correct) {
+            $('#' + answer + '-button').css('backgroundColor','green');
+        } else {
+            $('#' + answer + '-button').css('backgroundColor','red');
+            $('#' + correct + '-button').css('backgroundColor','green');
+        }
+        answered = true;
+    }
 }
