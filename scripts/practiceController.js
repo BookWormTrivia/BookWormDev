@@ -7,10 +7,7 @@ function getQuestionClick() {
 	difficulty = "easy";
     answered = false;
     getOneMCQuestion(difficulty);
-    for (i = 0; i < buttonOptions.length; i++) {
-        currentButton = buttonOptions[i];
-        document.getElementById(currentButton + '-div').innerHTML = '<button id="' + currentButton + `-button" class="btn btn-primary" onclick="checkAnswer('` + currentButton + `');">` + currentButton[0].toUpperCase() + `</button><span id="` + currentButton + `">` + document.getElementById(currentButton).innerHTML + `</span>`;
-    }
+	$(".btn-ans").css('background-color', '#007bff')
 }
 
 function displayQuestion(question, answers) {
