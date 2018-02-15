@@ -6,9 +6,10 @@ function getOneMCQuestion(difficulty) {
     fetchQuestion(base_url);
 }
 
-function getGroupQuestions(id) {
-    url = 'http://ec2-18-221-224-2.us-east-2.compute.amazonaws.com:4321/questions/id/';
-    url += id + '/';
+function getGroupQuestions(name) {
+    url = 'http://ec2-18-221-224-2.us-east-2.compute.amazonaws.com:4321/questions/name/';
+    url += name + '/';
+    console.log(url);
     fetchQuestion(url);
 }
 
@@ -48,7 +49,9 @@ function exists_callback(data) {
         alert('This group does not exist. \n You can create one below.')
     }
     else {
+        $("#game_screen").show();
         callback(data);
+        $("#groups_screen").hide();
     }
 }
 

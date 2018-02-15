@@ -1,5 +1,5 @@
 function getGroupQuestionClick() {
-    var group = "1";
+    var group = $("#play_group_name").val();
     getGroupQuestions(group);
 }
 
@@ -43,9 +43,9 @@ function toggleCreateGroup() {
 
 function playGroupClick() {
     var group_name = $("#play_group_name").val();
-    console.log(group_name);
     var url = "http://ec2-18-221-224-2.us-east-2.compute.amazonaws.com:4321/questions/name/" + group_name + '/'
     checkForGroup(url);
+    $("#group_name").text(group_name);
 }
 
 function groupExists() {
@@ -56,6 +56,10 @@ function createQuestionClick() {
     let group_name = $("#group_name").text();
     $("#game_screen").hide();
     $("#create_question").fadeIn();
-    $("#group_name").val(group_name);
-    
+    $("#group_to_add").val(group_name);    
+}
+
+function hideCreateQuestion() {
+    $("#create_question").hide();
+    $("#game_screen").fadeIn();
 }
