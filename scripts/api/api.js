@@ -48,6 +48,13 @@ function exists_callback(data) {
     if(data == 'failed') {
         alert('This group does not exist. \n You can create one below.')
     }
+    else if (data == 'No Questions') {
+        console.log(data);
+        $("#game_screen").show();
+        $("#groups_screen").hide();
+        $("#question").text("This Group Has No Questions");
+        $("#answers").hide();
+    }
     else {
         $("#game_screen").show();
         callback(data);
