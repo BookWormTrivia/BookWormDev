@@ -1,0 +1,26 @@
+.notecard {
+    border: 1px solid;
+    box-shadow: 5px 10px 18px #888888;
+    background-color: white;
+}
+
+body {
+    font-family: 'Scada', sans-serif;
+    background-image: url("./images/notebook.jpg")
+}
+
+.header {
+    margin: 25px;
+    padding: 15px;
+}
+
+.page_title {
+    font-size: 72px;
+    font-family: 'Bangers', cursive;
+}
+
+.logo {
+    width:15%;
+    height:auto;
+    padding-right: 50px;
+}

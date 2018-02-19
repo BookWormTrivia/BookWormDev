@@ -2,6 +2,9 @@
     <head>
         <link rel="stylesheet" href="./res/bootstrap.min.css"/>
         <link rel="stylesheet" href="./res/groups.css"/>
+        <link rel="stylesheet" href="./res/site.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Scada" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
         <link rel="icon" href="./res/images/bookworm.png"/>
         <script type="text/javascript" src="scripts/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="scripts/api/api.js"></script>
@@ -11,18 +14,20 @@
                 $("#game_screen").hide();
                 $("#create_group").hide();
                 $("#create_question").hide();
+                $("#groups_screen").fadeIn();
+
             })
         </script>
     </head>
 
     <body>
-        <div class="jumbotron">
-            <h1 style="white-space:nowrap;"><img style="width:60px; height:60px; margin-right:10px;" src="res/images/bookworm.png" onclick="window.location='index.html'"/>BookWorm Trivia</h1>
+        <div class="header notecard">
+            <h1 class="page_title"><img class="logo" src="res/images/bookworm.png" onclick="window.location='index.html'"/>BookWorm Trivia</h1>
         </div>
 
-        <div id="groups_screen" class="container" align="center">
+        <div id="groups_screen" class="container notecard" align="center">
             <div id="play_with_group">
-                <h3>Play with a Group</h3>
+                <h2>Play with a Group</h2>
                 <br/>
                 <h4>Group Name</h4>
                 <input type="text" id="play_group_name" /> <br /> <br />
