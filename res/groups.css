@@ -23,3 +23,15 @@
 #groups_screen {
     width: 30%;
 }
+
+#game_screen {
+    width: 75%; 
+    margin: auto; 
+    padding: 25px;
+}
+
+#create_question {
+    width: 25%;
+    padding: 25px;
+    margin: auto;
+}
