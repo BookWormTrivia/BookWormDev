@@ -4,6 +4,8 @@
         <link rel="stylesheet" href="./res/bootstrap.min.css">
 		<link rel="stylesheet" href="./res/private_styles.css">
         <link rel="stylesheet" href="./res/site.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Scada" rel="stylesheet">
         <script type="text/javascript" src="scripts/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="scripts/api/api.js"></script>
         <script type="text/javascript" src="scripts/localController.js"></script>
@@ -11,11 +13,11 @@
 
     <body onload="getQuestionClick();">
 
-        <div class="jumbotron">
-            <h1 class="top-header"><img class="icon" src="res/images/bookworm.png" onclick="window.location='index.html'"/>BookWorm Trivia</h1>
+        <div class="header notecard">
+            <h1 class="page_title"><img class="logo" src="res/images/bookworm.png"/>BookWorm Trivia</h1>
         </div>
 
-        <div id="enter_players">
+        <div id="enter_players" class="container notecard">
 
             <div id="set-online" style="text-align: center;" class="container">
                 <p class="h2" style="margin-bottom:20px;">Enter Player Names:</p>
@@ -42,7 +44,7 @@
             </div>
         </div>
 
-        <div id="game_screen" style="margin-left:80px; margin-right:80px;" class="container">
+        <div id="game_screen" style="margin-left:80px; margin-right:80px;" class="container notecard">
 			<div id="players" style="display:inline-block; font-size:20px;"> </div>
 			<br>
 			<br>
