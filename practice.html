@@ -1,45 +1,49 @@
 <html>
     <head>
+        <title>BookWorm Trivia</title>
         <link rel="stylesheet" href="./res/bootstrap.min.css">
 		<link rel="stylesheet" href="./res/private_styles.css">
-        <link rel="stylesheet" href="./res/groups.css"/>
+        <link rel="stylesheet" href="./res/site.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Scada" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
         <script type="text/javascript" src="scripts/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="scripts/api/api.js"></script>
         <script type="text/javascript" src="scripts/practiceController.js"></script>
     </head>
 
     <body onload="getQuestionClick();">
-        <div class="jumbotron">
-            <h1 class="top-header"><img class="icon" src="res/images/bookworm.png" onclick="window.location='index.html'"/>BookWorm Trivia</h1>
+        <div class="header notecard">
+            <h1 class="page_title"><img class="logo" src="res/images/bookworm.png" onclick="window.location='index.html'"/>BookWorm Trivia</h1>
         </div>
-
-        <div class="container">
-            <button class="btn btn-primary" onclick="getQuestionClick();">Next Question</button>
-        </div>
-        <br/>
-        <div class="container">
-            <h2 id="question">Question</h2>
-            <br/>
-            <div id="a-div" class="container">
-                <button id="a-button" class="btn btn-primary btn-ans" onclick="checkAnswer('a');">A</button>
-                <span id="a" class="padded-left"> Answer A</span>
+        <div class="container notecard">
+            <div class="container">
+                <button class="btn btn-primary" onclick="getQuestionClick();">Next Question</button>
             </div>
             <br/>
-            <div id="b-div" class="container">
-                <button id="b-button" class="btn btn-primary btn-ans" onclick="checkAnswer('b');">B</button>
-                <span id="b" class="padded-left"> Answer B</span>
+            <div class="container">
+                <h2 id="question">Question</h2>
+                <br/>
+                <div id="a-div" class="container">
+                    <button id="a-button" class="btn btn-primary btn-ans" onclick="checkAnswer('a');">A</button>
+                    <span id="a" class="padded-left"> Answer A</span>
+                </div>
+                <br/>
+                <div id="b-div" class="container">
+                    <button id="b-button" class="btn btn-primary btn-ans" onclick="checkAnswer('b');">B</button>
+                    <span id="b" class="padded-left"> Answer B</span>
+                </div>
+                <br/>
+                <div id="c-div" class="container">
+                    <button id="c-button" class="btn btn-primary btn-ans" onclick="checkAnswer('c');">C</button>
+                    <span id="c" class="padded-left"> Answer C</span>
+                </div>
+                <br/>
+                <div id="d-div" class="container">
+                    <button id="d-button" class="btn btn-primary btn-ans" onclick="checkAnswer('d');">D</button>
+                    <span id="d" class="padded-left"> Answer D</span>
+                </div>
+                <br/>
             </div>
-            <br/>
-            <div id="c-div" class="container">
-                <button id="c-button" class="btn btn-primary btn-ans" onclick="checkAnswer('c');">C</button>
-                <span id="c" class="padded-left"> Answer C</span>
-            </div>
-            <br/>
-            <div id="d-div" class="container">
-                <button id="d-button" class="btn btn-primary btn-ans" onclick="checkAnswer('d');">D</button>
-                <span id="d" class="padded-left"> Answer D</span>
-            </div>
-            <br/>
         </div>
 
     </body>
